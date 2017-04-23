@@ -383,7 +383,7 @@ ScheduleData.prototype.get_school_schedule = function(school, interval_start, in
 	var results = [];
 	var result;
 	for (var li in this.lectures){
-		if((si in this.lectures[li]["school"])&&(this.lectures[li]["end"]>=interval_start||this.lectures[li]["start"]<= interval_end)){
+		if((this.lectures[li]["school"].indexOf(si)>-1)&&this.lectures[li]["end"]>=interval_start&&this.lectures[li]["start"]<= interval_end){
 			result = {};
 			result["topic"] = this.lectures[li]["topic"];
 			result["school"] = this.lectures[li]["school"].map(function(d){return this.schools[d]["name"];}, this);
@@ -407,7 +407,7 @@ ScheduleData.prototype.get_room_schedule = function(room, interval_start, interv
 	var results = [];
 	var result;
 	for (var li in this.lectures){
-		if((ri === this.lectures[li]["room"])&&(this.lectures[li]["end"]>=interval_start||this.lectures[li]["start"]<= interval_end)){
+		if((ri === this.lectures[li]["room"])&&this.lectures[li]["end"]>=interval_start&&this.lectures[li]["start"]<= interval_end){
 			result = {};
 			result["topic"] = this.lectures[li]["topic"];
 			result["school"] = this.lectures[li]["school"].map(function(d){return this.schools[d]["name"];}, this);

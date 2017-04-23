@@ -118,7 +118,19 @@ var start_date = new Date(2017,7,1);
 var end_date = new Date(2017,8,1);
 var result = schedule_data.get_school_schedule(school_name, start_date, end_date);
 ```
-The value of `result` is 
+The value of `result` is:
+```
+[
+    {
+        "topic":"A Lecture Topic",
+        "school":["A Changed School Name"],
+        "lecturer":"A Lecturer Name",
+        "room":"A Room Name",
+        "start":"2017-08-15T16:00:00.000Z",
+        "end":"2017-08-15T18:30:00.000Z"
+    }
+]
+```
 
 ### ScheduleData.prototype.*get_room_schedule*(room_name, start_date, end_date)  
 Returns the list of lectures for the specified `room` (String) between `start_date` (Date) and `end_date` (Date).
