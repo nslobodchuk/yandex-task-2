@@ -182,7 +182,7 @@ ScheduleData.prototype.update_school = function(school, d){
 	var d_ = {};
 	Object.keys(this.schools[si]).forEach(function(field){
 		d_[field] = this.schools[si][field];
-	});
+	}, this);
 
 	for (p in d){
 		this.schools[si][p] = d[p];
@@ -217,7 +217,7 @@ ScheduleData.prototype.update_room = function(room, d){
 	var d_ = {};
 	Object.keys(this.rooms[ri]).forEach(function(field){
 		d_[field] = this.rooms[ri][field];
-	});
+	}, this);
 
 	for (p in d){
 		this.rooms[ri][p] = d[p];
